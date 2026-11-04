@@ -31,6 +31,10 @@ public class MatrizPrecios {
         System.out.println("\nBUSQUEDA INGENUA");
 
         busquedaIngenua(precios, 30);
+
+        System.out.println("\nBUSQUEDA STAIRCASE");
+        
+        busquedaStaircase(precios, 20);
     }
 
     public static void busquedaIngenua(int[][] precios, int objetivo) {
@@ -75,4 +79,56 @@ public class MatrizPrecios {
         System.out.println("Comparaciones realizadas: " + comparaciones);
 
     }
+
+    public static void busquedaStaircase(int[][] precios, int objetivo) {
+
+        // Variables
+        int fila = 0;
+        int columna = precios[0].length - 1;
+        int comparaciones = 0;
+        int encontrados = 0;
+
+        // Ciclo While
+
+        while (fila < precios.length && columna >= 0) {
+
+            comparaciones++;
+
+            if (precios[fila][columna] == objetivo) {
+
+                encontrados++;
+
+                System.out.println(
+                    "\nEncontrado en fila " + fila +
+                    ", columna " + columna
+                );
+
+                fila++;
+
+            } else if (precios[fila][columna] > objetivo) {
+
+                columna--;
+
+            } else {
+
+                fila++;
+
+            }
+        }
+
+        // Mostrar resultado
+        if (encontrados > 0) {
+
+            System.out.println("\nPrecio encontrado: " + objetivo);
+            System.out.println("\nTotal de apariciones: " + encontrados);
+
+        } else {
+
+            System.out.println("\nEl precio " + objetivo + " no existe en la matriz");
+
+        }
+
+        System.out.println("Comparaciones realizadas: " + comparaciones);
+    }
+
 }
