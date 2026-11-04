@@ -28,13 +28,8 @@ public class MatrizPrecios {
             System.out.println();
         }
 
-        System.out.println("\nBUSQUEDA INGENUA");
+        ejecutarPruebas(precios);
 
-        busquedaIngenua(precios, 30);
-
-        System.out.println("\nBUSQUEDA STAIRCASE");
-        
-        busquedaStaircase(precios, 20);
     }
 
     public static void busquedaIngenua(int[][] precios, int objetivo) {
@@ -57,8 +52,8 @@ public class MatrizPrecios {
 
                     encontrados++;
 
-                    System.out.print(
-                        "\nEncontrado en fila " + i +
+                    System.out.println(
+                        "Encontrado en fila " + i +
                         ", columna " + j
                     );
                 }
@@ -99,7 +94,7 @@ public class MatrizPrecios {
                 encontrados++;
 
                 System.out.println(
-                    "\nEncontrado en fila " + fila +
+                    "Encontrado en fila " + fila +
                     ", columna " + columna
                 );
 
@@ -129,6 +124,25 @@ public class MatrizPrecios {
         }
 
         System.out.println("Comparaciones realizadas: " + comparaciones);
+    }
+
+    public static void ejecutarPruebas(int[][] precios) {
+
+        int[] objetivos = {30, 99, 20, 10, 70};
+
+        for (int i = 0; i < objetivos.length; i++) {
+
+            System.out.println("\n----------------------------------------");
+            System.out.println("PRUEBA " + (i + 1) + " - Precio: " + objetivos[i]);
+            System.out.println("----------------------------------------");
+
+            System.out.println("\n[BUSQUEDA INGENUA]");
+            busquedaIngenua(precios, objetivos[i]);
+
+            System.out.println("\n[BUSQUEDA STAIRCASE]");
+            busquedaStaircase(precios, objetivos[i]);
+
+        }
     }
 
 }
