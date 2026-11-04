@@ -77,6 +77,12 @@ public class MatrizPrecios {
 
     public static void busquedaStaircase(int[][] precios, int objetivo) {
 
+        // Validar que la matriz contenga elementos
+        if (precios == null || precios.length == 0 || precios[0].length == 0) {
+            System.out.println("La matriz no contiene elementos.");
+            return;
+        }
+
         // Variables
         int fila = 0;
         int columna = precios[0].length - 1;
