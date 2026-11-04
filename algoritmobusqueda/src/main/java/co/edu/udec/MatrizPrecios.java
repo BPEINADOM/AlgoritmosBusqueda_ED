@@ -27,5 +27,52 @@ public class MatrizPrecios {
 
             System.out.println();
         }
+
+        System.out.println("\nBUSQUEDA INGENUA");
+
+        busquedaIngenua(precios, 30);
+    }
+
+    public static void busquedaIngenua(int[][] precios, int objetivo) {
+
+        // Contadores
+        int comparaciones = 0;
+        int encontrados = 0;
+
+        // Recorrer todas las filas
+        for (int i = 0; i < precios.length; i++) {
+
+            // Recorrer todas las columnas
+            for(int j = 0; j < precios[i].length; j++) {
+
+                // Contabilizar la comparacion
+                comparaciones++;
+
+                // Verificar si encontramos el precio
+                if (precios[i][j] == objetivo) {
+
+                    encontrados++;
+
+                    System.out.print(
+                        "\nEncontrado en fila " + i +
+                        ", columna " + j
+                    );
+                }
+            }
+        }
+
+        // Mostrar resultados
+        if (encontrados > 0) {
+
+            System.out.println("\nPrecio encontrado: " + objetivo);
+            System.out.println("\nTotal de apariciones: " + encontrados);
+
+        } else {
+
+            System.out.println("\nel precio " + objetivo + " no existe en la matriz");
+        }
+
+        System.out.println("Comparaciones realizadas: " + comparaciones);
+
     }
 }
