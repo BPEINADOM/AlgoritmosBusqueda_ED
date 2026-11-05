@@ -34,6 +34,12 @@ public class MatrizPrecios {
 
     public static void busquedaIngenua(int[][] precios, int objetivo) {
 
+        // Validar que la matriz no este vacia
+        if (precios == null || precios.length == 0 || precios[0].length == 0) {
+            System.out.println("La matriz no contiene elementos");
+            return;
+        }
+
         // Contadores
         int comparaciones = 0;
         int encontrados = 0;
