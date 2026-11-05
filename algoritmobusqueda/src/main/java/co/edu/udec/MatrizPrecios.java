@@ -70,11 +70,11 @@ public class MatrizPrecios {
         if (encontrados > 0) {
 
             System.out.println("\nPrecio encontrado: " + objetivo);
-            System.out.println("\nTotal de apariciones: " + encontrados);
+            System.out.println("Total de apariciones: " + encontrados);
 
         } else {
 
-            System.out.println("\nel precio " + objetivo + " no existe en la matriz");
+            System.out.println("\nEl precio " + objetivo + " no existe en la matriz");
         }
 
         System.out.println("Comparaciones realizadas: " + comparaciones);
@@ -127,7 +127,7 @@ public class MatrizPrecios {
         if (encontrados > 0) {
 
             System.out.println("\nPrecio encontrado: " + objetivo);
-            System.out.println("\nTotal de apariciones: " + encontrados);
+            System.out.println("Total de apariciones: " + encontrados);
 
         } else {
 
